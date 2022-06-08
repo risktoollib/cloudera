@@ -17,6 +17,52 @@
 ## Amend DESCRIPTION with dependencies read from package code parsing
 attachment::att_amend_desc()
 
+p <- c("rmarkdown",
+       "bizdays",
+       "broom","broom.mixed",
+       "caTools",
+       "corrr","corrplot",
+       "curl","RCurl",
+       "data.table",
+       "data.tree",
+       "devtools","doParallel",
+       "DiagrammeR","data.tree",
+       "rugarch","fGarch","fmsb",
+       "filesstrings","here",
+       "kableExtra",
+       "formatR","patchwork","gt","ggthemes","ggtext","gganimate","ggridges","scales","ggraph","igraph","gridtext","ggpubr","tufte","VennDiagram",
+       "golem", "desc","usethis",
+       "gifski", "Hmisc",
+       "caret","parsnip","glmnet","janitor","recipes","ranger","randomForest","anomalize","rpart.plot",
+       "here",
+       "htmltools","htmlwidgets",
+       "httr","jsonlite","magrittr","vembedr","XML","webshot","png","Cairo","widgetframe","magick",
+       "mongolite" ,"aws.s3","rhandsontable","shinycustomloader","wrapr",
+       "leaflet","tidygeocoder","rgdal","sp",
+       "lpSolve","lpSolveAPI","optimx",
+       "knitr","shiny",
+       "lubridate",
+       "moments","fitdistrplus","splines2",
+       "openxlsx",
+       "plotly","prettydoc","GGally","ggcorrplot","ggfortify","gganimate",
+       "prophet","e1071","naivebayes","splines2",
+       "revealjs","rstanarm",
+       "rjson","rvest","stringi","NLP","tidytext","textdata","lexicon","wordcloud2","robotstxt","tm","twitteR","rtweet","tm.plugin.webmining","widyr",
+       "riem",
+       "rlang","lobstr",
+       "sde","skimr",
+       "tidyverse","slider","tidyquant","tidymodels","feasts","timetk",
+       "xlsx")
+
+for (i in p) {
+  usethis::use_package(i, type = "Imports", min_version = NULL)
+
+}
+
+
+
+
+
 ## Add modules ----
 ## Create a module infrastructure in R/
 golem::add_module(name = "name_of_module1", with_test = TRUE) # Name of the module
