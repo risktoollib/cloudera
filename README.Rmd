@@ -15,40 +15,50 @@ knitr::opts_chunk$set(
 
 # cloudera
 
-<!-- badges: start -->
-<!-- badges: end -->
+Repo to provide a CML template to build images suitable to `R` users when:
 
-The goal of cloudera is to ...
++ No `sudo` access is provided on CML for users to install ubuntu libs.
++ You want minimize setup time fro `R` users for advanced users with libraries pre-installed as per below:.
 
-## Installation
+```{r, echo=FALSE}
 
-You can install the development version of cloudera like so:
-
-``` r
-# FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
+p <- sort(c("rmarkdown",
+       "bizdays",
+       "broom","broom.mixed",
+       "caTools",
+       "corrr","corrplot",
+       "curl","RCurl",
+       "data.table",
+       "data.tree",
+       "devtools","doParallel",
+       "DiagrammeR","data.tree",
+       "rugarch","fGarch","fmsb",
+       "filesstrings","here",
+       "kableExtra",
+       "formatR","patchwork","gt","ggthemes","ggtext","gganimate","ggridges","scales","ggraph","igraph","gridtext","ggpubr","tufte","VennDiagram",
+       "golem", "desc","usethis",
+       "gifski", "Hmisc",
+       "caret","parsnip","glmnet","janitor","recipes","ranger","randomForest","anomalize","rpart.plot",
+       "here",
+       "htmltools","htmlwidgets",
+       "httr","jsonlite","magrittr","vembedr","XML","webshot","png","Cairo","widgetframe","magick",
+       "mongolite" ,"aws.s3","rhandsontable","shinycustomloader","wrapr",
+       "leaflet","tidygeocoder","rgdal","sp",
+       "lpSolve","lpSolveAPI","optimx",
+       "knitr","shiny",
+       "lubridate",
+       "moments","fitdistrplus","splines2",
+       "openxlsx",
+       "plotly","prettydoc","GGally","ggcorrplot","ggfortify","gganimate",
+       "prophet","e1071","naivebayes","splines2",
+       "revealjs","rstanarm",
+       "rjson","rvest","stringi","NLP","tidytext","textdata","lexicon","wordcloud2","robotstxt","tm","twitteR","rtweet","tm.plugin.webmining","widyr",
+       "riem",
+       "rlang","lobstr",
+       "sde","skimr",
+       "tidyverse","slider","tidyquant","tidymodels","feasts","timetk",
+       "xlsx"))
+p
 ```
 
-## Example
 
-This is a basic example which shows you how to solve a common problem:
-
-```{r example}
-library(cloudera)
-## basic example code
-```
-
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
-
-```{r cars}
-summary(cars)
-```
-
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this. You could also use GitHub Actions to re-render `README.Rmd` every time you push. An example workflow can be found here: <https://github.com/r-lib/actions/tree/v1/examples>.
-
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
