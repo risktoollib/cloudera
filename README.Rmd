@@ -17,8 +17,8 @@ knitr::opts_chunk$set(
 
 Repo to provide a CML template to build images suitable to `R` users when:
 
-+ No `sudo` access is provided on CML for users to install ubuntu libs.
-+ You want minimize setup time fro `R` users for advanced users with libraries pre-installed as per below:.
++ No `sudo` access is provided on CML for users to install `ubuntu` libs.
++ You want minimize setup time for advanced users with the following libraries pre-installed:
 
 ```{r, echo=FALSE}
 

@@ -6,10 +6,10 @@
 Repo to provide a CML template to build images suitable to `R` users
 when:
 
--   No `sudo` access is provided on CML for users to install ubuntu
+-   No `sudo` access is provided on CML for users to install `ubuntu`
     libs.
--   You want tp minimize setup time for `R` advanced users with
-    libraries pre-installed as per below:.
+-   You want minimize setup time for advanced users with the following
+    libraries pre-installed:
 
 <!-- -->
 
