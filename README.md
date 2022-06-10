@@ -8,7 +8,7 @@ when:
 
 -   No `sudo` access is provided on CML for users to install ubuntu
     libs.
--   You want minimize setup time fro `R` users for advanced users with
+-   You want tp minimize setup time for `R` advanced users with
     libraries pre-installed as per below:.
 
 <!-- -->
