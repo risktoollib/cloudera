@@ -13,52 +13,25 @@ knitr::opts_chunk$set(
 )
 ```
 
-# cloudera
+# Cloudera Machince Learning R Docker Image
 
 Repo to provide a CML template to build images suitable to `R` users when:
 
 + No `sudo` access is provided on CML for users to install `ubuntu` libs.
++ Ensure `libudunits2-dev` is part of the ubuntu install.
 + You want minimize setup time for advanced users with the following libraries pre-installed:
 
 ```{r, echo=FALSE}
 
-p <- sort(c("rmarkdown",
-       "bizdays",
-       "broom","broom.mixed",
-       "caTools",
-       "corrr","corrplot",
-       "curl","RCurl",
-       "data.table",
-       "data.tree",
-       "devtools","doParallel",
-       "DiagrammeR","data.tree",
-       "rugarch","fGarch","fmsb",
-       "filesstrings","here",
-       "kableExtra",
-       "formatR","patchwork","gt","ggthemes","ggtext","gganimate","ggridges","scales","ggraph","igraph","gridtext","ggpubr","tufte","VennDiagram",
-       "golem", "desc","usethis",
-       "gifski", "Hmisc",
-       "caret","parsnip","glmnet","janitor","recipes","ranger","randomForest","anomalize","rpart.plot",
-       "here",
-       "htmltools","htmlwidgets",
-       "httr","jsonlite","magrittr","vembedr","XML","webshot","png","Cairo","widgetframe","magick",
-       "mongolite" ,"aws.s3","rhandsontable","shinycustomloader","wrapr",
-       "leaflet","tidygeocoder","rgdal","sp",
-       "lpSolve","lpSolveAPI","optimx",
-       "knitr","shiny",
-       "lubridate",
-       "moments","fitdistrplus","splines2",
-       "openxlsx",
-       "plotly","prettydoc","GGally","ggcorrplot","ggfortify","gganimate",
-       "prophet","e1071","naivebayes","splines2",
-       "revealjs","rstanarm",
-       "rjson","rvest","stringi","NLP","tidytext","textdata","lexicon","wordcloud2","robotstxt","tm","twitteR","rtweet","tm.plugin.webmining","widyr",
-       "riem",
-       "rlang","lobstr",
-       "sde","skimr",
-       "tidyverse","slider","tidyquant","tidymodels","feasts","timetk",
-       "xlsx"))
+p <- sort(c("rmarkdown","bizdays","bookdown","learnr","caTools","corrr","corrplot","curl","RCurl","data.table","data.tree","devtools","doParallel","DiagrammeR","factoextra","rugarch","fGarch","fmsb","filesstrings","here","kableExtra","formatR","patchwork","gt","ggthemes","ggtext","gganimate","ggridges","scales","ggraph","igraph","gridtext","ggpubr","tufte","VennDiagram","desc","usethis","gifski","googleVis","googlesheets4","googledrive","flextable","Hmisc","caret","parsnip","glmnet","janitor","recipes","ranger","randomForest","anomalize","rpart.plot","htmltools","htmlwidgets","httr2","jsonlite","magrittr","vembedr","XML","webshot2","png","Cairo","widgetframe","magick","mongolite" ,"rhandsontable","shinycustomloader","wrapr","leaflet","tidygeocoder","rgdal","sp","lpSolve","lpSolveAPI","optimx","knitr","shiny","lubridate","moments","fitdistrplus","plotly","prettydoc","GGally","ggcorrplot","ggfortify","gganimate","prophet","e1071","naivebayes","splines2","revealjs","rstanarm","rjson","rvest","RSelenium","wdman","stringi","NLP","tidytext","textdata","lexicon","wordcloud2","robotstxt","tm","tm.plugin.webmining","widyr","riem","rlang","lobstr","sde","skimr","golem","shinipsum","slider","tidyquant","feasts","timetk","broom","broom.mixed","dials","infer","modeldata","modeldata","recipes","rsample","tune","workflows","workflowsets","yardstick","tint","tinytex","tufterhandout","pander","dplyr","tidyr","ggplot2","tibble","readr","purrr","stringr","forcats"))
 p
+```
+# Building the image
+
+In the same directory as the Dockerfile is:
+
+```{r, eval=FALSE}
+docker build "Dockerfile" -f docker:latest "."
 ```
 
 

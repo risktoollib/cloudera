@@ -1,55 +1,71 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# cloudera
+# Cloudera Machince Learning R Docker Image
 
 Repo to provide a CML template to build images suitable to `R` users
 when:
 
 -   No `sudo` access is provided on CML for users to install `ubuntu`
     libs.
+-   Ensure `libudunits2-dev` is part of the ubuntu install.
 -   You want minimize setup time for advanced users with the following
     libraries pre-installed:
 
 <!-- -->
 
-    #>   [1] "anomalize"           "aws.s3"              "bizdays"            
+    #>   [1] "anomalize"           "bizdays"             "bookdown"           
     #>   [4] "broom"               "broom.mixed"         "Cairo"              
     #>   [7] "caret"               "caTools"             "corrplot"           
     #>  [10] "corrr"               "curl"                "data.table"         
-    #>  [13] "data.tree"           "data.tree"           "desc"               
-    #>  [16] "devtools"            "DiagrammeR"          "doParallel"         
-    #>  [19] "e1071"               "feasts"              "fGarch"             
-    #>  [22] "filesstrings"        "fitdistrplus"        "fmsb"               
-    #>  [25] "formatR"             "GGally"              "gganimate"          
-    #>  [28] "gganimate"           "ggcorrplot"          "ggfortify"          
-    #>  [31] "ggpubr"              "ggraph"              "ggridges"           
-    #>  [34] "ggtext"              "ggthemes"            "gifski"             
-    #>  [37] "glmnet"              "golem"               "gridtext"           
-    #>  [40] "gt"                  "here"                "here"               
-    #>  [43] "Hmisc"               "htmltools"           "htmlwidgets"        
-    #>  [46] "httr"                "igraph"              "janitor"            
-    #>  [49] "jsonlite"            "kableExtra"          "knitr"              
-    #>  [52] "leaflet"             "lexicon"             "lobstr"             
-    #>  [55] "lpSolve"             "lpSolveAPI"          "lubridate"          
-    #>  [58] "magick"              "magrittr"            "moments"            
-    #>  [61] "mongolite"           "naivebayes"          "NLP"                
-    #>  [64] "openxlsx"            "optimx"              "parsnip"            
-    #>  [67] "patchwork"           "plotly"              "png"                
-    #>  [70] "prettydoc"           "prophet"             "randomForest"       
-    #>  [73] "ranger"              "RCurl"               "recipes"            
-    #>  [76] "revealjs"            "rgdal"               "rhandsontable"      
-    #>  [79] "riem"                "rjson"               "rlang"              
-    #>  [82] "rmarkdown"           "robotstxt"           "rpart.plot"         
-    #>  [85] "rstanarm"            "rtweet"              "rugarch"            
-    #>  [88] "rvest"               "scales"              "sde"                
-    #>  [91] "shiny"               "shinycustomloader"   "skimr"              
-    #>  [94] "slider"              "sp"                  "splines2"           
-    #>  [97] "splines2"            "stringi"             "textdata"           
-    #> [100] "tidygeocoder"        "tidymodels"          "tidyquant"          
-    #> [103] "tidytext"            "tidyverse"           "timetk"             
-    #> [106] "tm"                  "tm.plugin.webmining" "tufte"              
-    #> [109] "twitteR"             "usethis"             "vembedr"            
-    #> [112] "VennDiagram"         "webshot"             "widgetframe"        
-    #> [115] "widyr"               "wordcloud2"          "wrapr"              
-    #> [118] "xlsx"                "XML"
+    #>  [13] "data.tree"           "desc"                "devtools"           
+    #>  [16] "DiagrammeR"          "dials"               "doParallel"         
+    #>  [19] "dplyr"               "e1071"               "factoextra"         
+    #>  [22] "feasts"              "fGarch"              "filesstrings"       
+    #>  [25] "fitdistrplus"        "flextable"           "fmsb"               
+    #>  [28] "forcats"             "formatR"             "GGally"             
+    #>  [31] "gganimate"           "gganimate"           "ggcorrplot"         
+    #>  [34] "ggfortify"           "ggplot2"             "ggpubr"             
+    #>  [37] "ggraph"              "ggridges"            "ggtext"             
+    #>  [40] "ggthemes"            "gifski"              "glmnet"             
+    #>  [43] "golem"               "googledrive"         "googlesheets4"      
+    #>  [46] "googleVis"           "gridtext"            "gt"                 
+    #>  [49] "here"                "Hmisc"               "htmltools"          
+    #>  [52] "htmlwidgets"         "httr2"               "igraph"             
+    #>  [55] "infer"               "janitor"             "jsonlite"           
+    #>  [58] "kableExtra"          "knitr"               "leaflet"            
+    #>  [61] "learnr"              "lexicon"             "lobstr"             
+    #>  [64] "lpSolve"             "lpSolveAPI"          "lubridate"          
+    #>  [67] "magick"              "magrittr"            "modeldata"          
+    #>  [70] "modeldata"           "moments"             "mongolite"          
+    #>  [73] "naivebayes"          "NLP"                 "optimx"             
+    #>  [76] "pander"              "parsnip"             "patchwork"          
+    #>  [79] "plotly"              "png"                 "prettydoc"          
+    #>  [82] "prophet"             "purrr"               "randomForest"       
+    #>  [85] "ranger"              "RCurl"               "readr"              
+    #>  [88] "recipes"             "recipes"             "revealjs"           
+    #>  [91] "rgdal"               "rhandsontable"       "riem"               
+    #>  [94] "rjson"               "rlang"               "rmarkdown"          
+    #>  [97] "robotstxt"           "rpart.plot"          "rsample"            
+    #> [100] "RSelenium"           "rstanarm"            "rugarch"            
+    #> [103] "rvest"               "scales"              "sde"                
+    #> [106] "shinipsum"           "shiny"               "shinycustomloader"  
+    #> [109] "skimr"               "slider"              "sp"                 
+    #> [112] "splines2"            "stringi"             "stringr"            
+    #> [115] "textdata"            "tibble"              "tidygeocoder"       
+    #> [118] "tidyquant"           "tidyr"               "tidytext"           
+    #> [121] "timetk"              "tint"                "tinytex"            
+    #> [124] "tm"                  "tm.plugin.webmining" "tufte"              
+    #> [127] "tufterhandout"       "tune"                "usethis"            
+    #> [130] "vembedr"             "VennDiagram"         "wdman"              
+    #> [133] "webshot2"            "widgetframe"         "widyr"              
+    #> [136] "wordcloud2"          "workflows"           "workflowsets"       
+    #> [139] "wrapr"               "XML"                 "yardstick"
+
+# Building the image
+
+In the same directory as the Dockerfile is:
+
+``` r
+docker build "Dockerfile" -f docker:latest "."
+```
