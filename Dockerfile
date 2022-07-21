@@ -18,6 +18,8 @@ tesseract-ocr-eng texlive tk tk-dev tk-table unixodbc-dev zlib1g-dev htop wget \
 RUN R CMD javareconf
 RUN mkdir -p /usr/local/lib/R/etc/ /usr/lib/R/etc/
 RUN echo "options(repos = c(REPO_NAME = 'https://packagemanager.rstudio.com/cran/latest'), download.file.method = 'libcurl', Ncpus = 4)" | tee /usr/local/lib/R/etc/Rprofile.site | tee /usr/lib/R/etc/Rprofile.site
-RUN R -e 'install.packages(c("devtools","remotes","tidyverse","RCurl","plotly","httr2","rgdal","RTL"))'
+RUN R -e 'install.packages(c("devtools","remotes","tidyverse","RCurl","plotly","httr2","rgdal","RTL","ropenblas","doParallel"))'
+RUN R -e 'ropenblas::ropenblas(x = ropenblas::last_version_openblas()$last_version)'
+RUN R -e 'ropenblas::rcompiler(x = ropenblas::last_version_r()$last_version)'
 EXPOSE 8787
 CMD ["/init"]
