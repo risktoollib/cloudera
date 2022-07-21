@@ -17,6 +17,6 @@ tesseract-ocr-eng texlive tk tk-dev tk-table unixodbc-dev zlib1g-dev htop wget \
 RUN R CMD javareconf
 RUN mkdir -p /usr/local/lib/R/etc/ /usr/lib/R/etc/
 RUN echo "options(repos = c(REPO_NAME = 'https://packagemanager.rstudio.com/cran/latest'), download.file.method = 'libcurl', Ncpus = 4)" | tee /usr/local/lib/R/etc/Rprofile.site | tee /usr/lib/R/etc/Rprofile.site
-RUN R -e 'install.packages(c("devtools","remotes","tidyverse","plotly","RCurl","rvest","rgdal","RTL","doParallel"))'
+RUN R -e 'install.packages(c("devtools","remotes","tidyverse","plotly","RCurl","rvest","rgdal","terra","sp","RTL","doParallel"))'
 EXPOSE 8787
 CMD ["/init"]
