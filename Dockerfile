@@ -2,7 +2,7 @@ FROM rocker/rstudio:latest
 #RUN apt-get update && RUN apt-get install -y  cargo cmake gdal-bin git-core imagemagick libcairo2-dev libcurl4-openssl-dev libgdal-dev libgeos-dev libgeos++-dev libgit2-dev libglpk-dev libgmp-dev libicu-dev libmagic-dev libmagick++-dev libpng-dev libproj-dev libsasl2-dev libssl-dev libudunits2-dev libxml2-dev make pandoc pandoc-citeproc zlib1g-dev htop wget && rm -rf /var/lib/apt/lists/*
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 RUN apt-get update && apt-get install -y \
-bowtie2 bwidget cargo cmake coinor-libclp-dev dcraw default-jdk gdal-bin git gsfonts \
+apt-utils bowtie2 bwidget cargo cmake coinor-libclp-dev dcraw default-jdk gdal-bin git gsfonts \
 haveged imagej imagemagick jags libapparmor-dev libarchive-dev libcairo2-dev \
 libcurl4-openssl-dev libfftw3-dev libfontconfig1-dev libfreetype6-dev libfribidi-dev \
 libgdal-dev libgeos-dev libgit2-dev libgl1-mesa-dev libglib2.0-dev libglpk-dev \
@@ -18,8 +18,6 @@ tesseract-ocr-eng texlive tk tk-dev tk-table unixodbc-dev zlib1g-dev htop wget \
 RUN R CMD javareconf
 RUN mkdir -p /usr/local/lib/R/etc/ /usr/lib/R/etc/
 RUN echo "options(repos = c(REPO_NAME = 'https://packagemanager.rstudio.com/cran/latest'), download.file.method = 'libcurl', Ncpus = 4)" | tee /usr/local/lib/R/etc/Rprofile.site | tee /usr/lib/R/etc/Rprofile.site
-RUN R -e 'install.packages(c("devtools","remotes","tidyverse","RCurl","plotly","httr2","rgdal","RTL","ropenblas","doParallel"))'
-RUN R -e 'ropenblas::ropenblas(x = ropenblas::last_version_openblas()$last_version)'
-RUN R -e 'ropenblas::rcompiler(x = ropenblas::last_version_r()$last_version)'
+RUN R -e 'install.packages(c("devtools","remotes","tidyverse","plotly","RCurl","rvest","rgdal","RTL","doParallel"))'
 EXPOSE 8787
 CMD ["/init"]
