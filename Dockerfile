@@ -1,5 +1,4 @@
 FROM rocker/rstudio:latest
-#RUN apt-get update && RUN apt-get install -y  cargo cmake gdal-bin git-core imagemagick libcairo2-dev libcurl4-openssl-dev libgdal-dev libgeos-dev libgeos++-dev libgit2-dev libglpk-dev libgmp-dev libicu-dev libmagic-dev libmagick++-dev libpng-dev libproj-dev libsasl2-dev libssl-dev libudunits2-dev libxml2-dev make pandoc pandoc-citeproc zlib1g-dev htop wget && rm -rf /var/lib/apt/lists/*
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 RUN apt-get update && apt-get install -y \
 apt-utils bowtie2 bwidget cargo cmake coinor-libclp-dev dcraw default-jdk gdal-bin git gsfonts \
